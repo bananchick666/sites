@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PremiumWrap - Детейлинг премиум-класса</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="polishing-wheel"></div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo" id="logo">
+                <svg viewBox="0 0 200 50">
+                    <path class="logo-path" d="M20,10 L180,10 L170,40 L30,40 Z" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                    <text x="100" y="30" text-anchor="middle" class="logo-text">PREMIUMWRAP</text>
+                </svg>
+            </div>
+            <nav class="nav">
+                <a href="#services">Услуги</a>
+                <a href="#portfolio">Портфолио</a>
+                <a href="#calculator">Калькулятор</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <section class="hero">
+        <div class="film-overlay"></div>
+        <div class="container">
+            <h1>ПРОФЕССИОНАЛЬНЫЙ <span>ДЕТЕЙЛИНГ</span></h1>
+            <p>Оклейка пленкой, тонировка и полировка премиум-класса</p>
+            <button class="cta-button" id="openModalBtn">ЗАПИСАТЬСЯ</button>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="services" id="services">
+        <div class="decor-line gold-line"></div>
+        <div class="container">
+            <h2>НАШИ УСЛУГИ</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Оклейка пленкой</h3>
+                    <p>Полная защита ЛКП с гарантией 5 лет</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-window-maximize"></i>
+                    </div>
+                    <h3>Тонировка</h3>
+                    <p>Керамическая тонировка любой сложности</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Полировка</h3>
+                    <p>Восстановление глянца без царапин</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Портфолио -->
+    <section class="portfolio" id="portfolio">
+        <div class="decor-line silver-line"></div>
+        <div class="container">
+            <h2>НАШИ РАБОТЫ</h2>
+            <div class="portfolio-slider">
+                <div class="portfolio-item before" style="background-image: url('https://via.placeholder.com/800x500/333/fff?text=До')"></div>
+                <div class="portfolio-item after" style="background-image: url('https://via.placeholder.com/800x500/555/fff?text=После')"></div>
+                <div class="slider-handle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <h2>РАСЧЕТ СТОИМОСТИ</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="serviceSelect">Выберите услугу:</label>
+                    <select id="serviceSelect">
+                        <option value="150000">Полная оклейка</option>
+                        <option value="30000">Тонировка стекол</option>
+                        <option value="45000">Полировка кузова</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="carClass">Класс авто:</label>
+                    <select id="carClass">
+                        <option value="1">Эконом</option>
+                        <option value="1.2" selected>Средний</option>
+                        <option value="1.5">Премиум</option>
+                        <option value="2">Люкс</option>
+                    </select>
+                </div>
+                <div class="result">
+                    <h3>Примерная стоимость:</h3>
+                    <div class="price" id="calculatedPrice">0 ₽</div>
+                </div>
+                <button class="cta-button" id="calculateBtn">Рассчитать точно</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>ОФОРМЛЕНИЕ ЗАЯВКИ</h3>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Услуга:</label>
+                    <select id="service">
+                        <option value="Оклейка">Оклейка пленкой</option>
+                        <option value="Тонировка">Тонировка</option>
+                        <option value="Полировка">Полировка</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button">ОТПРАВИТЬ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">PREMIUMWRAP</div>
+                    <p>Профессиональный детейлинг с 2015 года</p>
+                    <p>г. Москва, ул. Автодетейлинговая, 12</p>
+                    <p>+7 (999) 123-45-67</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка CTA -->
+    <a href="#calculator" class="fixed-cta">
+        <i class="fas fa-calculator"></i> РАССЧИТАТЬ
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
